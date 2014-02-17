@@ -39,9 +39,10 @@ button {
     position: relative;
     display: block;
     margin: 50px 0 0 0;
-    padding: 3px 15px 3px 15px;
+    width:80px;
+    height:20px;
     border: 0px;
-    border-radius: 10px/15px;
+    border-radius: 7px;
     background: #eaeaea;
     background: linear-gradient(to bottom, #f2f2f2 30%,#e2e2e2 100%);
     text-shadow: 0px 2px 0 #FFF;
@@ -54,19 +55,18 @@ button:before {
     right: -1px;
     bottom: -1px;
     z-index: -3;
-    border-radius: 10px/15px;
+    border-radius: 7px;
     background: #ccc;
     background: linear-gradient(to bottom, #e5e5e5 50%, #a8a8a8 100%);
 }
 button:focus {
-    border: 1px solid;
-    border-color: #cde9ff #d0eaff #cde9ff #d0eaff;
+    position: relative;
     outline: 0px;
 }
 button:focus:before {
     position: absolute;
     content: "";
-    border-radius: 10px/15px;
+    border-radius: 7px;
     background: #ccc;
     background: linear-gradient(to bottom , #e5e5e5, #a8a8a8);
     box-shadow:0px 0px 1px 2px #94a1e0;
@@ -75,26 +75,39 @@ button:focus:before {
 button:focus:hover {
     background:#feffe1;
     background:linear-gradient(to bottom, #feffeb,#fdffcc);
-    border:0px;
 }
 
 button:focus:hover:before {
-    box-shadow: none;
+    background: #ccc;
+    background: linear-gradient(to bottom, #e5e5e5 50%, #a8a8a8 100%);
+    box-shadow:0px 0px 1px 2px #606992;
 }
 button:focus:active{
     background: #eaeaea;
     background: linear-gradient(to bottom, #f2f2f2,#e2e2e2);
-    box-shadow: inset 0px 3px 3px 0px rgba(186,186,186,1);
+    box-shadow: inset 0px 5px 4px 0px rgba(186,186,186,1);
+}
+button:focus:active:before {
+    position: absolute;
+    content: "";
+    border-radius: 7px;
+    background: #ccc;
+    background: linear-gradient(to bottom , #e5e5e5, #a8a8a8);
+    box-shadow:0px 0px 1px 2px #606992;
+    z-index: -3;
 }
 button:hover {
     background:#feffe1;
     background:linear-gradient(to bottom, #feffeb,#fdffcc);
+
 }
+button:hover:before {
+    box-shadow:none;
+}
+
 button:active {
     background: #eaeaea;
     background: linear-gradient(to bottom, #f2f2f2,#e2e2e2);
+    outline: none;
 }
-button:active:before{
-    background: #ccc;
-    background: linear-gradient(to top, #e5e5e5, #a8a8a8);
-}
+
